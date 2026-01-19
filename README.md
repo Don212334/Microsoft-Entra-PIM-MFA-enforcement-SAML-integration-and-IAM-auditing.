@@ -12,10 +12,7 @@ Microsoft Entra PIM, MFA enforcement, SAML integration, and IAM auditing.
 - Task 1: Enable Privileged Identity Management (PIM) 
 - Task 2: Configure PIM Role Activation & Approval Flow 
 - Task 3: Integrate Enterprise App with Entra ID via SAML 
-- Task 4: Automate Access Reviews in PIM
-- Task 5: Audit and Monitor IAM Activities in Entra ID
-- Task 6: Setup Bitwarden Password Collection
-- Task 7: Enforce MFA for Bitwarden Access
+- Task 4: Audit and Monitor IAM Activities in Entra ID
 
 # Task 1: Enable Privileged Identity Management (PIM)
 
@@ -93,9 +90,41 @@ Enable Single Sign On (SSO) for **Salesforce** using SAML 2.0 protcol with Entra
      o Salesforce
 3. After app created, selected: **Single Sign On > SAML**
 4. On SAML config page: Confirm Identity (Entity ID): https://saml.salesforce.com   && Reply URL (ACS):  https://<your-domain>.my.salesforce.com
+5. Downloaded the Federation Metadata XML
+6. Assigned a test user under **Users and Groups**
 
-
+   
 <img width="1599" height="810" alt="image" src="https://github.com/user-attachments/assets/21b09644-1569-42b2-a77a-ab682818db89" />
+
+   ## Key Concepts
+   o SAML 2.0 provides federated login between Entra ID and Salesforce.  
+   o Microsoft Entra ID acts as the Identity Provider (IdP)  
+   o Salesforce is the **SP**  
+   o SSO improves both security and user experience.  
+
+<img width="869" height="912" alt="image" src="https://github.com/user-attachments/assets/3e5d159b-9a65-46a7-9b92-504396ed4449" />
+
+## Task 4: Audit and Monitor IAM Activities in Entra ID
+
+# Objective 
+To monitor and audit Identity and Access Management (IAM) activities in MS Entra by tracking sign ins, role changes and other critical users actions. This strengthes visibility and supports proactive threat detection. 
+
+Steps performed
+
+1. **Accessed Microsoft Entra Admin Center**
+ - Logged into https://entra.microsoft.com with administrator credentials.
+2. Monitored Key IAM logs
+   - Navigated to **Monitoring & Health > Audit Logs** to track admin actions like role assignments and groups changes.
+   - Reviewed Sign-in Logs to analyze authentication activity, including both successful and failed login attempts.
+3. **Applied Filters to Identify Key Events**
+     - Filtered logs by time range, user, and activity types.
+     <img width="1906" height="820" alt="image" src="https://github.com/user-attachments/assets/dc65f4de-a8b7-4971-a611-e11822101a15" />
+4. Exported and Analyzed logs
+   - Exported logs to CSV (excel) for external review
+   - Used spreadsheet filters to detect anomalies and prepare audit summaries
+  
+     **Outcome**
+Successfully established a clear audit trail for IAM events in Entra ID. This task provided critical visibility into access patterns and administrative changes, supporting ongoing compliance and incident response readiness ## 
 
 
    
